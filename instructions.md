@@ -4,8 +4,7 @@
 add %r10, %r11 ; add r10 and r11, put result in r11
 cmp %r10, %r11 ; compare register r10 with register r11. The comparison sets flags in the processor status register which affect conditional jumps.
 cmp $99, %r11 ; compare the number 99 with register r11. The comparison set flags in the processor status register which affect conditional jumps.
-div %r10 ; divide rax by the given register (r10), place quotient into rax
-and remainder into rdx (rdx must be zero before this instruction)
+div %r10 ; divide rax by the given register (r10), place quotient into rax and remainder into rdx (rdx must be zero before this instruction)
 inc %r10 ; increment r10
 jmp label ; jump to label
 je label ; jump to label if equal
