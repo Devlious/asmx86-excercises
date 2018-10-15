@@ -12,12 +12,15 @@ brew install nasm
 
 # Install nasm on Windows
 ## Download the version you want
-[releases](https://www.nasm.us/pub/nasm/releasebuilds/?C=M;O=D)
 
+```
+
+[nasm releases](https://www.nasm.us/pub/nasm/releasebuilds/)
+
+```bash
 ## Go to the win32 / win64 directory
 ## Get the installer.exe
 ## double-click installer and follow the steps
-
 ```
 
 
