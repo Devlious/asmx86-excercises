@@ -1,3 +1,89 @@
+# General-Purpose Registers
+
+## The 64-bit versions of the x86 registers
+
+- **rax** - register a extended
+- **rbx** - register b extended
+- **rcx** - register c extended
+- **rdx** - regisster d extended
+- **rbp** - register base pointer ( start of stack )
+- **rsp** - register stack pointer ( current location in stack, growing downwards )
+- **rsi** - register source index ( source for data copies )
+- **rdi** - register destination index ( destination for data copies ) 
+
+### Registers 64-bit mode
+
+- **r8** - register 8
+
+- **r9** - register 9
+
+- **r10** - register 10
+
+- **r11** - register 11
+
+- **r12** - register 12
+
+- **r13** - register 13
+
+- **r14** - register 14
+
+- **r15** - register 15
+
+
+### These may be accessed as
+
+- **64-bit** registers using the **'r'** prefix: 
+
+- ```assembly
+  mov rax
+  mov rdi
+  mov r10
+  mov r11
+  ```
+
+- **32-bit** registers using the **'e'** prefix or **'d'** suffix:
+
+- ```assembly
+  mov eax
+  mov edi
+  mov r10d
+  mov r11d
+  ```
+
+- **16-bit** registers using **no** prefix ( original ) or **'w'** suffix:
+
+- ```assembly
+  mov ax
+  mov di
+  mov r10w
+  mov r11w
+  ```
+
+- **8-bit** registers using **'h'** ( high-byte of 16 bits ) suffix:
+
+- ```assembly
+  mov ah
+  mov dh
+  ```
+
+- **8-bit** registers using **'l'** ( low-byte of 16 bits ) or **'b'** suffix:
+
+- ```assembly
+  mov al
+  mov dl
+  mov r10b
+  mov r11b
+  ```
+
+
+
+### Usage during syscall/function call
+
+- First six arguments are in **rdi, rsi, rcx, r8d, r9d**; remaining arguments are on the stack.
+- For syscalls, the syscall number is in **rax**.
+- Return value is in **rax**.
+- The called routine is expected to preserve **rsp, rbp, rbx, r12, r13, r14 and r15** but may trample any other registers.
+
 # Instructions - Starter kit
 
 ```assembly
