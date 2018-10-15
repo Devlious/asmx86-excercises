@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# Compile
+nasm -f elf64 -o $1.'o' $1.'asm'
+
+# Executable
+ld -o $1 $1.'o'
+
+# Execute
+./$1
+
+# if arg2 eq 'detele' then delete otherwise nothing happen
+
+if [[ $2 = delete ]]; then
+		echo ''
+		echo '['$1'] run and other files were deleted.'
+		if [[ -e $1.'o' ]]; then
+				echo '['$1'.o] file was deleted.'
+				rm $1.'o'
+		fi
+
+		if [[ -e $1 ]]; then
+				echo '['$1'] file was deleted.'
+		fi
+else
+		echo ''
+		echo '['$1'] run without deleting any file.'
+fi
