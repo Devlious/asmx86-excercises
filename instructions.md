@@ -84,6 +84,22 @@
 - Return value is in **rax**.
 - The called routine is expected to preserve **rsp, rbp, rbx, r12, r13, r14 and r15** but may trample any other registers.
 
+
+
+#### Stack Pointer Register (RSP)
+
+**rsp** is used to point to the current top of the stack. The **rsp** register should not be used for data or other uses.
+
+#### Base Pointer Register (RBP)
+
+**rbp** is used as a base pointer during function calls. The **rbp** register should not be used for data or other uses.
+
+#### Instruction Pointer Register (RIP)
+
+In addition to the GPRs, there is a special register, **rip**, that is used by the CPU to point to the **next instruction to be executed**. Specifically, since the **rip** points to the next instruction, that means the instruction being pointed to by **rip**, and shown in the debugger, has not yet been executed. _This is an important distinction which can be confusing when reviewing code in a debugger_
+
+
+
 # Instructions - Starter kit
 
 ```assembly
