@@ -10,9 +10,10 @@ ld -o $1 $1.'o'
 ./$1
 
 # if arg2 eq 'detele' then delete otherwise nothing happen
+echo ''
+echo '#######################################################'
 
 if [[ $2 = delete ]]; then
-		echo ''
 		echo '['$1'] run and other files were deleted.'
 		if [[ -e $1.'o' ]]; then
 				echo '['$1'.o] file was deleted.'
@@ -23,6 +24,7 @@ if [[ $2 = delete ]]; then
 				echo '['$1'] file was deleted.'
 		fi
 else
-		echo ''
 		echo '['$1'] run without deleting any file.'
 fi
+
+echo '#######################################################'
